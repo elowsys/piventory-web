@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Piventory</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" *ngIf="showLinks">
+        <a class="nav-link" href="#">Node Library</a>
+      </li>
+      <li class="nav-item" *ngIf="showLinks">
+        <a class="nav-link" href="#">Code Samples</a>
+      </li>
+      <li class="nav-item" *ngIf="showLinks">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" *ngIf="showLinks">
+      <input class="form-control input-group mr-sm-2" type="text" placeholder="Search" aria-label="Search"
+        aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit"><span class="fas fa-search"></span></button>
+      </div>
+    </form>
+    <ul class="navbar-nav justify-content-end" *ngIf="showLinks">
+      <li class="nav-item">
+        <a href="#" class="btn nav-link"><span class="fas fa-user"></span></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="btn nav-link"><span class="fas fa-cog"></span></a>
+      </li>
+    </ul>
+  </div>
+</nav>

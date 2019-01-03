@@ -1,0 +1,35 @@
+<div *ngIf="onHome; then homeContent else nodeContent"></div>
+<ng-template #homeContent>
+<div class="jumbotron">
+  <h1 class="display-3"> {{ title }}!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+<ul class="nav nav-pills" style="margin-bottom:15px;">
+  <li class="pr-1">View:&nbsp;</li>
+  <li class="nav-item0" title="Card view"><a [class.active]="viewMode == 'card'" class="btn-link pr-2" (click)="viewMode = 'card'"><span class="far fa-address-card"></span></a></li>
+  <li class="nav-item0" title="List View"><a [class.active]="viewMode == 'list'" class="btn-link pr-1" (click)="viewMode = 'list'"><span class="far fa-list-alt"></span></a></li>
+</ul>
+<div [ngSwitch] = "viewMode">
+  <div *ngSwitchCase="'card'">
+    <app-device>
+    <ng-container class="rpiHeading">Primary device title</ng-container>
+    <ng-container class="rpiDetailLink"><a (click)="getDeviceDetails()" class="btn btn-link float-right"><span class="far fa-eye"></span></a></ng-container>
+    <ng-container class="rpiPng"><img src="../../assets/RPi_3.png" alt="Raspberry Pi" class="card-img"></ng-container>
+    <ng-container class="rpiProp1">Property 1</ng-container>
+    <ng-container class="rpiProp2">Property 2</ng-container>
+    <ng-container class="rpiProp3">Property 3</ng-container>
+    <ng-container class="rpiDesc">Device description - Some quick example text to build on the card title and make up the bulk of the card's content.</ng-container>
+  </app-device>
+  </div>
+  <div *ngSwitchCase="'list'">List View</div>
+</div>
+</ng-template>
+
+<ng-template #nodeContent>
+  <app-device-node></app-device-node>
+</ng-template>

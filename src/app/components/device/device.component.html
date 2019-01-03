@@ -1,0 +1,38 @@
+<div class="card border-primary mb-3" style="max-width: 25rem;">
+  <div class="card-header">
+    <h5 class="card-title">
+      <ng-content select=".rpiHeading"></ng-content>
+      <ng-content select=".rpiDetailLink"></ng-content>
+  </h5>
+</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-4">
+        <ng-content select=".rpiPng"></ng-content>
+      </div>
+      <div class="col-8">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <ng-content select=".rpiProp1"></ng-content>
+          </li>
+          <li class="list-group-item">
+            <ng-content select=".rpiProp2"></ng-content>
+          </li>
+          <li class="list-group-item">
+            <ng-content select=".rpiProp3"></ng-content>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">&nbsp;</div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p class="card-text">
+          <ng-content select=".rpiDesc"></ng-content>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
